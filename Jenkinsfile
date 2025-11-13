@@ -10,5 +10,32 @@ pipeline {
                 '''
             }
         }
+
+        stage('Deploy') {
+            steps {
+                timeout(time: 1, unit: 'MINUTES') {
+                    retry(3) {
+                        sh '''
+                            echo "Tentative de déploiement..."
+                            # ici on simule un script flakey-deploy.sh
+                            # pour l’instant on fait juste un echo
+                            echo "Déploiement OK (simulation)"
+                        '''
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Post: ceci s’exécute toujours (cleanup, logs, etc.)'
+        }
+        success {
+            echo 'Post: pipeline terminé avec SUCCÈS ✅'
+        }
+        failure {
+            echo 'Post: pipeline en ÉCHEC ❌'
+        }
     }
 }
