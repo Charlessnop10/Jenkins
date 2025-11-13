@@ -1,11 +1,12 @@
-Jenkinsfile (Declarative Pipeline)
-/* Requires the Docker Pipeline plugin */
+// Jenkinsfile (Declarative Pipeline)
+// Requires the Docker Pipeline plugin (optional pour plus tard)
+
 pipeline {
-    agent { docker { image 'maven:3.9.11-eclipse-temurin-21-alpine' } }
+    agent any
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                echo 'Hello from Jenkins Pipeline !'
             }
         }
     }
