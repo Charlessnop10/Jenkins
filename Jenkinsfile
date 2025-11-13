@@ -1,8 +1,8 @@
 // Jenkinsfile (Declarative Pipeline)
-// Requires the Docker Pipeline plugin (optional pour plus tard)
+// Requires the Docker Pipeline plugin (peut être installé plus tard)
 
 pipeline {
-    agent any
+    agent any   // on évite Docker pour le moment, plus simple dans ton TP
     stages {
         stage('build') {
             steps {
