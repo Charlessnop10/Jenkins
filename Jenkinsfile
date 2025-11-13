@@ -1,12 +1,13 @@
-// Jenkinsfile (Declarative Pipeline)
-// Requires the Docker Pipeline plugin (peut être installé plus tard)
-
 pipeline {
-    agent any   // on évite Docker pour le moment, plus simple dans ton TP
+    agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                echo 'Hello from Jenkins Pipeline !'
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
         }
     }
