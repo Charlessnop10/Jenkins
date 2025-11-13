@@ -32,10 +32,10 @@ pipeline {
             echo 'Post: ceci s’exécute toujours (cleanup, logs, etc.)'
         }
         success {
-            echo 'Post: pipeline terminé avec SUCCÈS ✅'
+            echo 'Post: pipeline terminé avec SUCCÈS'
         }
         failure {
-            echo 'Post: pipeline en ÉCHEC ❌'
+            echo 'Post: pipeline en ÉCHEC'
         }
     }
 }
